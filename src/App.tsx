@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers, Figma, Github } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers, Figma, Github, X } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -530,52 +530,227 @@ function AboutPage() {
 }
 
 function ResumePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [reason, setReason] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate sending email (In a real app, you'd use EmailJS or a backend here)
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsModalOpen(false);
+      
+      // Trigger dummy PDF download
+      const element = document.createElement("a");
+      const file = new Blob(["This is a placeholder for the actual resume PDF. Replace this with a real PDF file in your public folder."], {type: 'application/pdf'});
+      element.href = URL.createObjectURL(file);
+      element.download = "Maggidi_Sai_Resume.pdf";
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+
+      // Open mail client as a fallback to actually send the email
+      window.location.href = `mailto:maggidisai4@gmail.com?subject=Resume Downloaded&body=Reason for download: ${reason}`;
+      
+      setReason("");
+    }, 1500);
+  };
+
   return (
-    <main className="pt-32 pb-24 px-4 max-w-3xl mx-auto min-h-screen flex flex-col items-center">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">My Resume</h1>
-        <p className="text-neutral-400">A brief overview of my experience and education.</p>
+    <main className="pt-32 pb-24 px-4 max-w-4xl mx-auto min-h-screen flex flex-col items-center relative">
+      
+      {/* Download Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-[#141414] border border-white/10 rounded-2xl p-6 w-full max-w-md relative"
+          >
+            <button 
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <h3 className="text-2xl font-bold mb-2 text-white">Download Resume</h3>
+            <p className="text-neutral-400 mb-6 text-sm">Please let me know why you'd like to download my resume. This helps me keep track of opportunities!</p>
+            
+            <form onSubmit={handleSubmit}>
+              <textarea
+                required
+                value={reason}
+                onChange={(e) => setReason(e.target.value)}
+                placeholder="E.g., Hiring for a UI/UX role at..."
+                className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl p-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-[#FF5A36] transition-colors resize-none h-32 mb-6"
+              />
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="flex-1 px-4 py-3 rounded-xl font-semibold text-white border border-white/10 hover:bg-white/5 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !reason.trim()}
+                  className="flex-1 px-4 py-3 rounded-xl font-semibold text-white bg-[#FF5A36] hover:bg-[#e04e2e] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      Submit & Download
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      )}
+
+      <div className="mb-12">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="inline-flex items-center gap-2 bg-white text-black hover:bg-neutral-200 px-8 py-4 rounded-full font-bold text-lg transition-colors"
+        >
+          <Download className="w-5 h-5" />
+          Download Resume
+        </button>
       </div>
       
-      <div className="w-full bg-[#141414] border border-white/10 rounded-2xl p-8 md:p-12 mb-12">
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-6 text-[#FF5A36]">Experience</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold">Product Design Intern</h3>
-              <p className="text-neutral-400 mb-2">Honeywell • Present</p>
-              <p className="text-neutral-300">Working on graduation project focusing on enterprise platform experiences.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">UX Design Intern</h3>
-              <p className="text-neutral-400 mb-2">DRS • 2023</p>
-              <p className="text-neutral-300">Designed a VR based pre-scan exposure therapy to ease MRI anxiety.</p>
-            </div>
-          </div>
-        </div>
+      <div className="w-full bg-[#141414] border border-white/10 rounded-2xl p-8 md:p-12 text-neutral-300">
         
-        <div>
-          <h2 className="text-2xl font-bold mb-6 text-[#FF5A36]">Education</h2>
-          <div className="space-y-6">
+        {/* Header */}
+        <div className="text-center mb-12 border-b border-white/10 pb-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Maggidi Sai</h1>
+          <p className="text-xl font-medium mb-2">UI/UX Designer & Frontend Developer | 3+ Years</p>
+          <p className="text-neutral-400 text-sm md:text-base">
+            Hyderabad, India | +91 9182029042 | maggidisai4@gmail.com | <a href="#" className="text-[#FF5A36] hover:underline">Linkedin</a> | <a href="#" className="text-[#FF5A36] hover:underline">Portfolio</a>
+          </p>
+        </div>
+
+        {/* Professional Summary */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 text-[#FF5A36] border-b border-white/10 pb-2">Professional Summary</h2>
+          <p className="leading-relaxed">
+            UI/UX Designer & Front-End Developer with 3+ years of experience delivering end-to-end design and development solutions for web and mobile applications. Strong expertise in UX strategy, user research, interaction design, wireframing, prototyping, usability testing, and design systems, along with hands-on experience in Angular and React to build responsive and scalable user interfaces.
+          </p>
+        </div>
+
+        {/* Core Skills */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 text-[#FF5A36] border-b border-white/10 pb-2">Core Skills</h2>
+          <ul className="space-y-2 leading-relaxed">
+            <li><strong className="text-white">Design Leadership:</strong> Mentoring, Design Reviews, Feedback, Quality Assurance</li>
+            <li><strong className="text-white">UX Strategy:</strong> UX Roadmap, Product Alignment, Experience Optimization.</li>
+            <li><strong className="text-white">UX Research:</strong> User Interviews, Research Planning, Personas, Journey Mapping, Competitive Analysis.</li>
+            <li><strong className="text-white">UX Design:</strong> Information Architecture, User Flows, Task Flows, Wireframes, Interaction Design.</li>
+            <li><strong className="text-white">UI Design:</strong> High-Fidelity UI, Responsive UI, Mobile UI, Web UI, Visual Design, Layout Systems.</li>
+            <li><strong className="text-white">Design Systems:</strong> Design Standards, Component Library, UI Guidelines, Documentation, Consistency.</li>
+            <li><strong className="text-white">Testing & Iteration:</strong> Usability Testing, Insights, Iteration, Data-Informed Design, UX Improvements.</li>
+            <li><strong className="text-white">Accessibility:</strong> WCAG, Accessibility Standards, Inclusive Design.</li>
+            <li><strong className="text-white">Front-End Development:</strong> Angular, React, HTML5, CSS3, JavaScript, Component-Based UI Implementation</li>
+            <li><strong className="text-white">Responsive Implementation:</strong> Mobile-First, Cross-Browser Support, Pixel-Perfect UI, Layout Alignment, Flexbox, Grid, <span className="text-[#FF5A36]">UI Debugging</span></li>
+            <li><strong className="text-white">Collaboration:</strong> Stakeholder Management, Product Managers, Developers, Presentation and Communication.</li>
+            <li><strong className="text-white">Tools:</strong> Figma, FigJam, Canva, Photoshop, stitch, Aistudio, claude, VS Code, Github, vercel.</li>
+          </ul>
+        </div>
+
+        {/* Experience */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6 text-[#FF5A36] border-b border-white/10 pb-2">Experience</h2>
+          
+          <div className="mb-8">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4">
+              <h3 className="text-xl font-bold text-white">UI/UX Designer & Frontend Developer | Deviats pvt Ltd – Hyderabad</h3>
+              <span className="text-neutral-400 font-medium shrink-0 mt-1 md:mt-0">Jan 2023 – Present</span>
+            </div>
+            <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
+              <li>Designed intuitive web applications, mobile apps, and dashboard interfaces with a strong focus on user experience and business goals.</li>
+              <li>Conducted UX research, created wireframes, user flows, and high-fidelity designs for multiple projects across industries.</li>
+              <li>Collaborated with US-based clients to deliver UI/UX solutions aligned with user needs and product requirements.</li>
+              <li>Converted UI/UX designs into responsive front-end implementations using Angular, React, HTML, CSS, and JavaScript, utilizing AI-assisted tools to enhance productivity and code quality.</li>
+              <li>Worked closely with developers to ensure pixel-perfect UI, resolving alignment, responsiveness, and cross-browser issues.</li>
+              <li>Performed UI debugging, identified design gaps, and provided clear guidance to development teams for implementation.</li>
+              <li>Contributed to design systems and maintained UI consistency across applications</li>
+              <li>Designed marketing assets including posters, banners, and other graphical materials</li>
+              <li>Developed and optimized static websites with a focus on SEO, performance, and accessibility</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Top Projects */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6 text-[#FF5A36] border-b border-white/10 pb-2">Top Projects</h2>
+          
+          <div className="space-y-8">
+            {/* Project 1 */}
             <div>
-              <h3 className="text-xl font-semibold">Bachelor of Design</h3>
-              <p className="text-neutral-400">National Institute of Design • 2020 - 2024</p>
+              <h3 className="text-xl font-bold text-white mb-3">Inventory Management System (Web Application)</h3>
+              <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
+                <li>Designed user flows, wireframes, and high-fidelity UI using Figma, ensuring consistency with reusable components.</li>
+                <li>Developed a multi-level system (Super Admin → Admin → Staff) with features like inventory, billing, GST, and payment tracking.</li>
+                <li>Built dashboards for real-time insights on stock, sales, and financial performance with cross-device accessibility.</li>
+                <li>Contributed to UI debugging and front-end development, fixing responsiveness and improving overall user experience.</li>
+              </ul>
+            </div>
+
+            {/* Project 2 */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-3">Soult App – Digital Locker & Asset Management (Mobile Application)</h3>
+              <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
+                <li>Redesigned the mobile app UI with improved user flows, wireframes, and high-fidelity designs using Figma, enhancing overall user experience.</li>
+                <li>Built a secure digital locker concept to store documents and sensitive personal information with a clean, intuitive interface.</li>
+                <li>Designed a unique executor access feature, allowing authorized users to access and manage data in case of emergency scenarios.</li>
+                <li>Ensured a fully responsive and user-friendly design for Android and iOS platforms, focusing on security, accessibility, and usability.</li>
+              </ul>
+            </div>
+
+            {/* Project 3 */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-3">Foodistan - Food Chain and Delivery Application (Web Application)</h3>
+              <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
+                <li>Designed user flows, wireframes, and high-fidelity UI using Figma, ensuring a consistent and scalable design system.</li>
+                <li>Developed a fully responsive web application and contributed to front-end development using Angular.</li>
+                <li>Implemented store-based product request and distribution features, enabling efficient multi-store operations for an Australia-based client.</li>
+                <li>Performed UI debugging and responsiveness fixes, improving usability and cross-device performance.</li>
+              </ul>
+            </div>
+
+            {/* Project 4 */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-3">MedQuants – Pharmacy Delivery & Healthcare App (Mobile Application)</h3>
+              <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
+                <li>Designed end-to-end user flows, wireframes, and high-fidelity UI using Figma for a multi-module healthcare platform (User, Rider, Pharmacy, Admin).</li>
+                <li>Built features for medicine ordering, prescription upload, order handling, and delivery tracking, along with doctor appointments and lab test booking.</li>
+                <li>Solved key UX challenges (like prescription upload flow) by creating intuitive, user-friendly UI solutions in collaboration with developers and stakeholders.</li>
+                <li>Designed a modern, scalable interface (glassmorphism style) and worked closely with clients and teams to deliver a seamless, end-to-end experience.</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      <a 
-        href="#" 
-        className="inline-flex items-center gap-2 bg-white text-black hover:bg-neutral-200 px-8 py-4 rounded-full font-bold text-lg transition-colors"
-        onClick={(e) => {
-          e.preventDefault();
-          alert("Resume download would start here!");
-        }}
-      >
-        <Download className="w-5 h-5" />
-        Download Resume
-      </a>
+        {/* Education */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-4 text-[#FF5A36] border-b border-white/10 pb-2">Education</h2>
+          <h3 className="text-lg font-bold text-white">B.Tech in Electrical and Electronics Engineering</h3>
+        </div>
+
+        {/* Languages */}
+        <div>
+          <h2 className="text-2xl font-bold mb-4 text-[#FF5A36] border-b border-white/10 pb-2">Languages</h2>
+          <p className="text-lg font-medium text-white">English, Telugu</p>
+        </div>
+
+      </div>
     </main>
   );
 }
