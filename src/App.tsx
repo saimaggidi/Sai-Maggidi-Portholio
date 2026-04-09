@@ -2,24 +2,26 @@ import { ArrowRight, Mail, Linkedin, Dribbble } from 'lucide-react';
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
-      <div className="flex items-center">
-        <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden">
-          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Utkarsha&backgroundColor=ffdfbf" alt="Logo" className="w-full h-full object-cover" />
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-6 md:gap-12">
+        <div className="flex items-center">
+          <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sai&backgroundColor=ffdfbf" alt="Logo" className="w-full h-full object-cover" />
+          </div>
         </div>
-      </div>
-      <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-neutral-300">
-        <a href="#" className="text-white">Design</a>
-        <a href="#" className="hover:text-white transition-colors">Other Projects</a>
-        <a href="#" className="hover:text-white transition-colors">Research</a>
-        <a href="#" className="hover:text-white transition-colors">About Me</a>
-      </div>
-      <div>
-        <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-neutral-200 transition-colors">
-          Resume
-        </button>
-      </div>
-    </nav>
+        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-neutral-300">
+          <a href="#" className="text-white">Design</a>
+          <a href="#" className="hover:text-white transition-colors">Other Projects</a>
+          <a href="#" className="hover:text-white transition-colors">Research</a>
+          <a href="#" className="hover:text-white transition-colors">About Me</a>
+        </div>
+        <div className="pl-2">
+          <button className="bg-white text-black px-5 py-2 rounded-xl text-sm font-semibold hover:bg-neutral-200 transition-colors">
+            Resume
+          </button>
+        </div>
+      </nav>
+    </div>
   );
 }
 
@@ -30,10 +32,10 @@ function Hero() {
       
       <div className="relative z-10 flex flex-col items-center">
         <div className="w-32 h-32 rounded-full bg-[#FF5A36] mb-6 overflow-hidden border-4 border-[#0a0a0a] shadow-xl">
-           <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Utkarsha&backgroundColor=ffdfbf" alt="Utkarsha" className="w-full h-full object-cover" />
+           <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sai&backgroundColor=ffdfbf" alt="Sai" className="w-full h-full object-cover" />
         </div>
         
-        <p className="text-lg font-medium mb-4 text-neutral-200">Hello, I'm Utkarsha !!</p>
+        <p className="text-lg font-medium mb-4 text-neutral-200">Hello, I'm Sai !!</p>
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
           Designing <span className="font-serif italic font-normal text-neutral-300">Thoughtful</span><br />
