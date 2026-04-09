@@ -137,16 +137,17 @@ function Hero() {
           </div>
         </div>
         
-        <p className="text-lg font-medium mb-4 text-neutral-200">Hello, I'm Sai !!</p>
+        <p className="text-lg font-medium mb-4 text-neutral-200">Hello, I'm Sai Maggidi !!</p>
+
+         <p className="text-[#FF5A36] font-medium text-lg md:text-xl mb-6">
+          UI/UX Designer & Frontend Developer
+        </p>
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
           Designing <span className="font-serif italic font-normal text-neutral-300">Thoughtful</span><br />
           Digital <span className="font-serif italic font-normal text-neutral-300">Experiences</span>
         </h1>
         
-        <p className="text-[#FF5A36] font-medium text-lg md:text-xl mb-6">
-          Currently working with Honeywell for Graduation Project
-        </p>
         
         <p className="text-neutral-400 max-w-2xl text-base md:text-lg leading-relaxed">
           I'm a product designer focused on how people engage with complex systems whether
@@ -513,37 +514,37 @@ function AboutPage() {
           {/* Tags */}
           {/* Top Left */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Immersive Media</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Product Design</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Middle Left */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute top-1/2 -translate-y-1/2 -left-16 md:-left-64 flex items-center gap-3 z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Architecture</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Research</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Bottom Left */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }} className="absolute bottom-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Animal Volunteer</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Design</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Top Right */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="absolute top-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Product Design</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UI Systems</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Middle Right */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }} className="absolute top-1/2 -translate-y-1/2 -right-16 md:-right-64 flex items-center gap-3 flex-row-reverse z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Research</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Frontend Dev</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Bottom Right */}
           <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }} className="absolute bottom-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
-            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Systems Design</div>
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Usability Testing</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
         </div>
@@ -554,13 +555,13 @@ function AboutPage() {
         <h1 className="text-4xl md:text-5xl font-bold mb-8">About Me</h1>
         <div className="space-y-6 text-neutral-300 text-lg leading-relaxed">
           <p>
-            Hi, I'm Sai! I'm a product designer and frontend developer passionate about creating intuitive and engaging digital experiences.
+            Hi, I’m Sai — a UI/UX Designer and Frontend Developer who enjoys turning complex ideas into simple, meaningful digital experiences. I believe good design is not just about how it looks, but how it works and feels for the user.
           </p>
           <p>
-            Currently, I'm working with Honeywell for my Graduation Project, where I focus on designing human-centered interfaces for complex enterprise systems.
+            Over the past 3+ years, I’ve worked on products across healthcare, inventory, and food delivery, focusing on creating smooth, user-friendly experiences from research to development.
           </p>
           <p>
-            My approach blends aesthetic sensibility with technical feasibility, ensuring that the products I design are not only beautiful but also functional and accessible.
+            I love bridging the gap between design and code, making sure what we design is actually built the right way.
           </p>
         </div>
       </div>
@@ -686,7 +687,7 @@ function ResumePage() {
 
         {/* Core Skills */}
         <div className="mb-10">
-          <h2 className="text-2xl font-bold mb-4 text-[#FF5A36] border-b border-white/10 pb-2">Core Skills</h2>
+          <h2 className="text-2xl font-bold text-[#FF5A36] border-b border-white/10 pb-2">Core Skills</h2>
           <ul className="space-y-2 leading-relaxed">
             <li><strong className="text-white">Design Leadership:</strong> Mentoring, Design Reviews, Feedback, Quality Assurance</li>
             <li><strong className="text-white">UX Strategy:</strong> UX Roadmap, Product Alignment, Experience Optimization.</li>
