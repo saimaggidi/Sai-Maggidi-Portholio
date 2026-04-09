@@ -68,7 +68,7 @@ function Navbar() {
           <div className="flex items-center">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
-                <img src="/profile.png" alt="Logo" className="w-full h-full object-cover" />
+                <img src="/profile.png?v=2" alt="Logo" className="w-full h-full object-cover" />
               </div>
             </Link>
           </div>
@@ -133,7 +133,7 @@ function Hero() {
       <div className="relative z-10 flex flex-col items-center">
         <div className="hover-3d-container mb-6">
           <div className="hover-3d-element w-32 h-32 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-xl cursor-pointer">
-             <img src="/profile.png" alt="Sai" className="w-full h-full object-cover" />
+             <img src="/profile.png?v=2" alt="Sai" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -507,7 +507,7 @@ function AboutPage() {
         <div className="relative scale-75 md:scale-100">
           {/* Avatar */}
           <div className="w-64 h-64 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-2xl relative z-10 flex items-center justify-center">
-            <img src="/profile.png" alt="Sai" className="w-full h-full object-cover" />
+            <img src="/profile.png?v=2" alt="Sai" className="w-full h-full object-cover" />
           </div>
 
           {/* Tags */}
