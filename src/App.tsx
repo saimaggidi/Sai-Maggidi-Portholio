@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Linkedin, Dribbble, Download } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -176,6 +176,108 @@ function ProjectCard({ title, description, tags, imageUrl }: ProjectCardProps) {
   );
 }
 
+function Services() {
+  return (
+    <section className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold mb-4">What I Do</h2>
+        <p className="text-neutral-400">Bridging the gap between aesthetics and functionality</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Design Card */}
+        <motion.div 
+          whileHover={{ y: -8 }}
+          className="relative p-8 md:p-10 rounded-[2rem] bg-[#141414] border border-white/5 overflow-hidden group"
+        >
+          {/* Animated Background Blob */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute -top-32 -right-32 w-64 h-64 bg-[#FF5A36]/10 rounded-full blur-3xl pointer-events-none"
+          />
+          
+          {/* Abstract Animated Illustration */}
+          <div className="absolute top-10 right-10 w-32 h-32 pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-700">
+            <motion.div
+              animate={{ y: [0, -15, 0], rotate: [0, 15, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#FF5A36] to-orange-400 rounded-full blur-[1px] shadow-lg shadow-[#FF5A36]/20"
+            />
+            <motion.div
+              animate={{ y: [0, 15, 0], rotate: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-0 left-0 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl rotate-12 blur-[1px] shadow-lg shadow-purple-500/20"
+            />
+          </div>
+
+          <div className="relative z-10">
+            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-8 border border-white/10">
+              <PenTool className="w-7 h-7 text-[#FF5A36]" />
+            </div>
+            <h3 className="text-3xl font-bold mb-4">UI/UX Design</h3>
+            <p className="text-neutral-400 leading-relaxed mb-8 max-w-[85%]">
+              Crafting intuitive, human-centered interfaces that solve complex problems. From wireframes to high-fidelity prototypes, I focus on the user journey and visual harmony.
+            </p>
+            <ul className="space-y-3 text-sm text-neutral-300">
+              <li className="flex items-center gap-3"><Sparkles className="w-4 h-4 text-[#FF5A36]" /> User Research & Strategy</li>
+              <li className="flex items-center gap-3"><Sparkles className="w-4 h-4 text-[#FF5A36]" /> Wireframing & Prototyping</li>
+              <li className="flex items-center gap-3"><Sparkles className="w-4 h-4 text-[#FF5A36]" /> Visual & Interaction Design</li>
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* Development Card */}
+        <motion.div 
+          whileHover={{ y: -8 }}
+          className="relative p-8 md:p-10 rounded-[2rem] bg-[#141414] border border-white/5 overflow-hidden group"
+        >
+          {/* Animated Background Blob */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"
+          />
+          
+          {/* Abstract Animated Illustration */}
+          <div className="absolute top-10 right-10 w-32 h-32 pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-700">
+            <motion.div
+              animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-2 right-2 w-24 h-8 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-md border border-blue-500/30 rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+            />
+            <motion.div
+              animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute top-14 right-8 w-16 h-8 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-md border border-blue-500/30 rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+            />
+            <motion.div
+              animate={{ y: [0, -8, 0], x: [0, 8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute top-26 right-4 w-20 h-8 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-md border border-blue-500/30 rounded-lg shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+            />
+          </div>
+
+          <div className="relative z-10">
+            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-8 border border-white/10">
+              <Code2 className="w-7 h-7 text-blue-400" />
+            </div>
+            <h3 className="text-3xl font-bold mb-4">Development</h3>
+            <p className="text-neutral-400 leading-relaxed mb-8 max-w-[85%]">
+              Bringing designs to life with clean, efficient, and scalable code. I build responsive web applications with a focus on performance and smooth animations.
+            </p>
+            <ul className="space-y-3 text-sm text-neutral-300">
+              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> React & Next.js</li>
+              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> Tailwind CSS & Framer Motion</li>
+              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> Responsive Web Apps</li>
+            </ul>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 function SelectedProjects() {
   const projects = [
     {
@@ -316,6 +418,7 @@ function Home() {
     <main>
       <Hero />
       <LogoTicker />
+      <Services />
       <SelectedProjects />
       <OtherProjects />
     </main>
