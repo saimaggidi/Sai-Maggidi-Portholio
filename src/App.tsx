@@ -501,7 +501,7 @@ function AboutPage() {
     <main className="pt-32 pb-24 px-4 max-w-5xl mx-auto min-h-screen">
       
       {/* Top Visual Section */}
-      <div className="relative flex justify-center items-center py-20 md:py-32 mb-16">
+      <div className="relative flex justify-center items-center py-20 md:py-32">
         {/* Grid Background */}
         <div className="absolute inset-0 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)] pointer-events-none"></div>
 
