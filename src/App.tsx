@@ -64,7 +64,7 @@ function Navbar() {
   return (
     <>
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-        <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-4 md:gap-12 w-full md:max-w-fit">
+        <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-4 md:gap-12 w-full md:max-w-fit">
           <div className="flex items-center">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
