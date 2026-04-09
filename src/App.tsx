@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers, Figma, Github, X } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers, Figma, Github, X, Menu } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -49,9 +49,11 @@ function CustomCursor() {
 function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleDesignClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false);
     if (location.pathname !== '/') {
       navigate('/#selected-projects');
     } else {
@@ -60,29 +62,66 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-      <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-6 md:gap-12">
-        <div className="flex items-center">
-          <Link to="/">
-            <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
-              <img src="/profile.png" alt="Logo" className="w-full h-full object-cover" />
-            </div>
-          </Link>
-        </div>
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-neutral-300">
-          <a href="#selected-projects" onClick={handleDesignClick} className="hover:text-white transition-colors cursor-pointer">Design</a>
-          <Link to="/other-projects" className="hover:text-white transition-colors">Other Projects</Link>
-          <Link to="/about" className="hover:text-white transition-colors">About Me</Link>
-        </div>
-        <div className="pl-2">
-          <Link to="/resume">
-            <button className="bg-white text-black px-5 py-2 rounded-xl text-sm font-semibold hover:bg-neutral-200 transition-colors">
-              Resume
+    <>
+      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-4 md:gap-12 w-full md:max-w-fit">
+          <div className="flex items-center">
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+              <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
+                <img src="/profile.png" alt="Logo" className="w-full h-full object-cover" />
+              </div>
+            </Link>
+          </div>
+          <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-neutral-300">
+            <a href="#selected-projects" onClick={handleDesignClick} className="hover:text-white transition-colors cursor-pointer">Design</a>
+            <Link to="/other-projects" className="hover:text-white transition-colors">Other Projects</Link>
+            <Link to="/about" className="hover:text-white transition-colors">About Me</Link>
+          </div>
+          <div className="hidden md:block pl-2">
+            <Link to="/resume">
+              <button className="bg-white text-black px-5 py-2 rounded-xl text-sm font-semibold hover:bg-neutral-200 transition-colors">
+                Resume
+              </button>
+            </Link>
+          </div>
+          <div className="md:hidden flex items-center pl-2">
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </Link>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center p-6 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-[#141414]/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 w-full max-w-[320px] flex flex-col items-center space-y-6 shadow-2xl"
+          >
+            <a href="#selected-projects" onClick={handleDesignClick} className="text-lg font-medium text-neutral-300 hover:text-white transition-colors">Design</a>
+            <Link to="/other-projects" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-neutral-300 hover:text-white transition-colors">Other Projects</Link>
+            <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-lg font-medium text-neutral-300 hover:text-white transition-colors">About Me</Link>
+            
+            <div className="w-full h-px bg-white/10 my-2"></div>
+            
+            <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
+              <button className="w-full bg-white text-black px-6 py-3 rounded-xl text-base font-semibold hover:bg-neutral-200 transition-colors">
+                Resume
+              </button>
+            </Link>
+          </motion.div>
         </div>
-      </nav>
-    </div>
+      )}
+    </>
   );
 }
 
