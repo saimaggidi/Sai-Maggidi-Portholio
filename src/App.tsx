@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers } from 'lucide-react';
+import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkles, Layers, Figma, Github } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -121,12 +121,16 @@ function Hero() {
 
 function LogoTicker() {
   const logos = [
-    <div key="1" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 bg-white rounded-sm inline-block"></span> NANAVATI MAX</div>,
-    <div key="2" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 bg-white rounded-full inline-block"></span> HCIPAI</div>,
-    <div key="3" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 bg-white rotate-45 inline-block"></span> India HCI 2025</div>,
-    <div key="4" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 border-2 border-white inline-block"></span> ServDes</div>,
-    <div key="5" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 bg-white rounded-sm inline-block"></span> IMMERSIVE MEDIA</div>,
-    <div key="6" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><span className="w-6 h-6 bg-white inline-block" style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></span> HCP</div>
+    <div key="1" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><Figma className="w-6 h-6" /> Figma</div>,
+    <div key="2" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><div className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center"><div className="w-2 h-2 bg-white rounded-full"></div></div> FigJam</div>,
+    <div key="3" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><div className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold">Ca</div> Canva</div>,
+    <div key="4" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center text-[10px] font-bold">Ps</div> Photoshop</div>,
+    <div key="5" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center text-[10px] font-bold">St</div> Stitch</div>,
+    <div key="6" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><Sparkles className="w-6 h-6" /> AI Studio</div>,
+    <div key="7" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center text-[12px] font-serif italic">C</div> Claude</div>,
+    <div key="8" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><Code2 className="w-6 h-6" /> VS Code</div>,
+    <div key="9" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><Github className="w-6 h-6" /> GitHub</div>,
+    <div key="10" className="flex items-center gap-2 font-bold text-xl whitespace-nowrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2L24 22H0L12 2Z"/></svg> Vercel</div>
   ];
 
   return (
@@ -385,7 +389,7 @@ function Footer() {
     <footer className="border-t border-white/10 py-8 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-neutral-400 text-sm">
-          Copyright © utkarsha 2025. All rights reserved.
+          Copyright © saimaggidi 2026. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
@@ -454,24 +458,71 @@ function OtherProjectsPage() {
 
 function AboutPage() {
   return (
-    <main className="pt-32 pb-24 px-4 max-w-4xl mx-auto min-h-screen">
-      <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
-        <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shrink-0 border-4 border-white/10">
-          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=ffdfbf" alt="Sai" className="w-full h-full object-cover" />
-        </div>
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
-          <div className="space-y-4 text-neutral-300 text-lg leading-relaxed">
-            <p>
-              Hi, I'm Sai! I'm a product designer and frontend developer passionate about creating intuitive and engaging digital experiences.
-            </p>
-            <p>
-              Currently, I'm working with Honeywell for my Graduation Project, where I focus on designing human-centered interfaces for complex enterprise systems.
-            </p>
-            <p>
-              My approach blends aesthetic sensibility with technical feasibility, ensuring that the products I design are not only beautiful but also functional and accessible.
-            </p>
+    <main className="pt-32 pb-24 px-4 max-w-5xl mx-auto min-h-screen">
+      
+      {/* Top Visual Section */}
+      <div className="relative flex justify-center items-center py-20 md:py-32 mb-16">
+        {/* Grid Background */}
+        <div className="absolute inset-0 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)] pointer-events-none"></div>
+
+        <div className="relative scale-75 md:scale-100">
+          {/* Avatar */}
+          <div className="w-64 h-64 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-2xl relative z-10 flex items-center justify-center">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=transparent" alt="Sai" className="w-[120%] h-[120%] object-cover mt-8" />
           </div>
+
+          {/* Tags */}
+          {/* Top Left */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Immersive Media</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+
+          {/* Middle Left */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute top-1/2 -translate-y-1/2 -left-16 md:-left-64 flex items-center gap-3 z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Architecture</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+
+          {/* Bottom Left */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }} className="absolute bottom-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Animal Volunteer</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+
+          {/* Top Right */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="absolute top-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Product Design</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+
+          {/* Middle Right */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }} className="absolute top-1/2 -translate-y-1/2 -right-16 md:-right-64 flex items-center gap-3 flex-row-reverse z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Research</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+
+          {/* Bottom Right */}
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }} className="absolute bottom-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
+            <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Systems Design</div>
+            <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Text Content */}
+      <div className="max-w-3xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-8">About Me</h1>
+        <div className="space-y-6 text-neutral-300 text-lg leading-relaxed">
+          <p>
+            Hi, I'm Sai! I'm a product designer and frontend developer passionate about creating intuitive and engaging digital experiences.
+          </p>
+          <p>
+            Currently, I'm working with Honeywell for my Graduation Project, where I focus on designing human-centered interfaces for complex enterprise systems.
+          </p>
+          <p>
+            My approach blends aesthetic sensibility with technical feasibility, ensuring that the products I design are not only beautiful but also functional and accessible.
+          </p>
         </div>
       </div>
     </main>
