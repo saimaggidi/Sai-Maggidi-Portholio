@@ -375,27 +375,27 @@ function Services() {
 function SelectedProjects() {
   const projects = [
     {
-      title: "Redesigning WYSA",
-      description: "To support corporate employees' mental wellbeing through conversational agents integrated within microsoft teams",
-      tags: ["Conversational UX", "Mental Wellbeing", "P2 Project"],
+      title: "Inventory Management System",
+      description: "To enhance business efficiency through a multi-role system with real-time dashboards for inventory, billing, and performance tracking.",
+      tags: ["Dashboard", "Enterprise UX", "Data Visualization"],
       imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "Ease In A VR Exposure Therapy",
-      description: "A VR based pre scan exposure therapy designed to ease MRI anxiety and prepare patients for actual scan",
-      tags: ["Virtual Reality", "DRS Internship", "Ongoing"],
+      title: " Soult App – Digital Locker",
+      description: "To provide a safe and intuitive way for users to store and manage sensitive documents with a clean and accessible mobile experience.",
+      tags: ["Mobile UX", "Security", "Personal Data"],
       imageUrl: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "SUTRA for Reskilling and Upskilling",
-      description: "Service ecosystem to reskill and upskill rural women SHGs, empowering them with market-ready skills and income opportunities.",
-      tags: ["Service Design", "ServDes", "4 Weeks"],
+      title: "Foodistan – Food Delivery Platform",
+      description: "To streamline food ordering and store management by creating a responsive and scalable web platform for seamless user interactions.",
+      tags: ["Web App", "E-commerce UX", "Multi-store System"],
       imageUrl: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800"
     },
     {
-      title: "\"Mom, I did see your 8 texts but...\"",
-      description: "Redesigned WhatsApp to help young adults maintain connection with parents using emotion aware features and micro interactions.",
-      tags: ["Emotional UX", "Personal Project", "3 Weeks"],
+      title: "MedQuants – Healthcare App",
+      description: "To simplify medicine ordering and healthcare services through an intuitive and user-friendly mobile platform.",
+      tags: ["Healthcare UX", "Mobile App", "End-to-End Design"],
       imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800"
     },
     {
@@ -482,14 +482,11 @@ function Footer() {
           Copyright © saimaggidi 2026. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
-          <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
+          <a href="mailto:maggidisai4@gmail.com" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
             <Mail className="w-4 h-4" />
           </a>
-          <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
+          <a href="https://www.linkedin.com/in/abhimanyu-sai-maggidi-08510129a" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
             <Linkedin className="w-4 h-4" />
-          </a>
-          <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:border-white/30 transition-colors">
-            <Dribbble className="w-4 h-4" />
           </a>
         </div>
       </div>
