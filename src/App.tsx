@@ -4,6 +4,11 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import profileImg from './assets/profile.png';
 import inventoryImg from './assets/inventorymanagementsystem.png';
+import fooddImg from './assets/food-delivery-platform.png';
+import soultImg from './assets/soult.png';
+import iotImg from './assets/iot.png';
+import atsImg from './assets/ats.png';
+import medquantsImg from './assets/medquants.png';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -386,31 +391,31 @@ function SelectedProjects() {
       title: " Soult App – Digital Locker",
       description: "To provide a safe and intuitive way for users to store and manage sensitive documents with a clean and accessible mobile experience.",
       tags: ["Mobile UX", "Security", "Personal Data"],
-      imageUrl: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=800"
+      imageUrl: soultImg
     },
     {
       title: "Foodistan – Food Delivery Platform",
       description: "To streamline food ordering and store management by creating a responsive and scalable web platform for seamless user interactions.",
       tags: ["Web App", "E-commerce UX", "Multi-store System"],
-      imageUrl: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800"
+      imageUrl: fooddImg
     },
     {
       title: "MedQuants – Healthcare App",
       description: "To simplify medicine ordering and healthcare services through an intuitive and user-friendly mobile platform.",
       tags: ["Healthcare UX", "Mobile App", "End-to-End Design"],
-      imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800"
+      imageUrl: medquantsImg
     },
     {
-      title: "Design System for ONDC",
+      title: "Devlats IoT - Centralized IoT Control",
       description: "Scalable design system for ONDC that brings consistency to government E-commerce platforms.",
       tags: ["Design System", "Module Work", "3 Weeks"],
-      imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800"
+      imageUrl: iotImg
     },
     {
-      title: "Impact of Green Nudges on ChatGPT",
+      title: "ATS AI Recruitment Software",
       description: "Designed green nudges AI interfaces that make the hidden carbon footprint visible to users.",
       tags: ["Digital Ergonomics", "HFID Module", "3 Weeks"],
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
+      imageUrl: atsImg
     }
   ];
 
