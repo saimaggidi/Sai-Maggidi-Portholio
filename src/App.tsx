@@ -125,6 +125,52 @@ function Navbar() {
   );
 }
 
+function Typewriter({ text, className, delay = 0, hideCursorOnComplete = false }: { text: string, className?: string, delay?: number, hideCursorOnComplete?: boolean }) {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
+
+    const startTyping = () => {
+      let i = 0;
+      interval = setInterval(() => {
+        setDisplayedText(text.substring(0, i + 1));
+        i++;
+        if (i === text.length) {
+          clearInterval(interval);
+          setIsComplete(true);
+        }
+      }, 50);
+    };
+
+    if (delay > 0) {
+      timeout = setTimeout(startTyping, delay);
+    } else {
+      startTyping();
+    }
+
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, [text, delay]);
+
+  return (
+    <p className={className}>
+      {displayedText}
+      {(!hideCursorOnComplete || !isComplete) && (
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ repeat: Infinity, duration: 0.8 }}
+          className="inline-block w-[2px] h-[1em] bg-current align-middle ml-[2px]"
+        />
+      )}
+    </p>
+  );
+}
+
 function Hero() {
   return (
     <section className="relative pt-32 pb-20 px-4 flex flex-col items-center text-center min-h-[80vh] justify-center overflow-hidden">
@@ -137,11 +183,17 @@ function Hero() {
           </div>
         </div>
         
-        <p className="text-lg font-medium mb-4 text-neutral-200">Hello, I'm Sai Maggidi !!</p>
+        <Typewriter 
+          text="Hello, I'm Sai Maggidi !!" 
+          className="text-lg font-medium mb-4 text-neutral-200 h-7" 
+          hideCursorOnComplete={true}
+        />
 
-         <p className="text-[#FF5A36] font-medium text-lg md:text-xl mb-6">
-          UI/UX Designer & Frontend Developer
-        </p>
+        <Typewriter 
+          text="UI/UX Designer & Frontend Developer" 
+          className="text-[#FF5A36] font-medium text-lg md:text-xl mb-6 h-7 md:h-8" 
+          delay={1300}
+        />
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
           Designing <span className="font-serif italic font-normal text-neutral-300">Thoughtful</span><br />
@@ -150,9 +202,7 @@ function Hero() {
         
         
         <p className="text-neutral-400 max-w-2xl text-base md:text-lg leading-relaxed">
-          I'm a product designer focused on how people engage with complex systems whether
-          it's VR interfaces, enterprise platform, or AI tools. I design human centered experiences
-          for complex systems while my dog design new ways to ignore me.
+          I’m a UI/UX Designer and Frontend Developer focused on creating intuitive and scalable products across web and mobile. I design human-centered experiences and bring them to life with clean, responsive code.
         </p>
       </div>
     </section>
@@ -311,8 +361,8 @@ function Services() {
               Bringing designs to life with clean, efficient, and scalable code. I build responsive web applications with a focus on performance and smooth animations.
             </p>
             <ul className="space-y-3 text-sm text-neutral-300">
-              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> React & Next.js</li>
-              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> Tailwind CSS & Framer Motion</li>
+              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> React & Angular</li>
+              <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> Tailwind CSS & Scss</li>
               <li className="flex items-center gap-3"><Layers className="w-4 h-4 text-blue-400" /> Responsive Web Apps</li>
             </ul>
           </div>
