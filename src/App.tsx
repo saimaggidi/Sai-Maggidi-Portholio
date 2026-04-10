@@ -195,7 +195,7 @@ function Hero() {
           delay={1300}
         />
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
+        <h1 className="text-[34px] md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
           Designing <span className="font-serif italic font-normal text-neutral-300">Thoughtful</span><br />
           Digital <span className="font-serif italic font-normal text-neutral-300">Experiences</span>
         </h1>
@@ -551,7 +551,7 @@ function AboutPage() {
     <main className="pt-32 pb-24 px-4 max-w-5xl mx-auto min-h-screen">
       
       {/* Top Visual Section */}
-      <div className="relative flex justify-center items-center py-20 md:py-32">
+      <div className="relative flex justify-center items-center md:py-32">
         {/* Grid Background */}
         <div className="absolute inset-0 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_80%)] pointer-events-none"></div>
 
