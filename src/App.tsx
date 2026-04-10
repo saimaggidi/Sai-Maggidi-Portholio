@@ -415,7 +415,7 @@ function SelectedProjects() {
   return (
     <section id="selected-projects" className="py-24 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">Selected Projects</h2>
+      <h2 className="text-[34px] font-bold mb-4">Selected Projects</h2>
         <p className="text-neutral-400">Explore my work to see how I tackle complex problems</p>
       </div>
       
