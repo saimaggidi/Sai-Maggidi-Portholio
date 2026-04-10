@@ -2,6 +2,8 @@ import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkle
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import profileImg from './assets/profile.png';
+import inventoryImg from './inventorymanagementsystem.png';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -179,7 +181,7 @@ function Hero() {
       <div className="relative z-10 flex flex-col items-center">
         <div className="hover-3d-container mb-6">
           <div className="hover-3d-element w-32 h-32 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-xl cursor-pointer">
-             <img src="/profile.png?v=2" alt="Sai" className="w-full h-full object-cover" />
+             <img src={profileImg} alt="Sai" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -720,7 +722,7 @@ function ResumePage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Maggidi Sai</h1>
           <p className="text-xl font-medium mb-2">UI/UX Designer & Frontend Developer | 3+ Years</p>
           <p className="text-neutral-400 text-sm md:text-base">
-            Hyderabad, India | +91 9182029042 | maggidisai4@gmail.com | <a href="#" className="text-[#FF5A36] hover:underline">Linkedin</a> | <a href="#" className="text-[#FF5A36] hover:underline">Portfolio</a>
+            Hyderabad, India | +91 9182029042 | maggidisai4@gmail.com | <a href="#" className="text-[#FF5A36] hover:underline">Linkedin</a> | <a href="https://#" className="text-[#FF5A36] hover:underline">Portfolio</a>
           </p>
         </div>
 
