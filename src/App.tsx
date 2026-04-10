@@ -678,7 +678,7 @@ function ResumePage() {
                 placeholder="E.g., Hiring for a UI/UX role at..."
                 className="w-full bg-[#0a0a0a] border border-white/10 rounded-xl p-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-[#FF5A36] transition-colors resize-none h-32 mb-6"
               />
-              <div className="flex gap-4">
+              <div className="flex flex-col gap-4">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
