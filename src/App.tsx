@@ -274,7 +274,7 @@ function Services() {
   return (
     <section className="py-24 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">What I Do</h2>
+      <h2 className="text-[34px] font-bold mb-4">What I Do</h2>
         <p className="text-neutral-400">Bridging the gap between aesthetics and functionality</p>
       </div>
       
@@ -451,7 +451,7 @@ function OtherProjects() {
   return (
     <section className="py-24 bg-[#0f0f0f] border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Other Projects</h2>
+        <h2 className="text-[34px] font-bold mb-4">Other Projects</h2>
         <p className="text-neutral-400 mb-8">Work that didn't make the headlines but played a part in the process.</p>
         <Link to="/other-projects">
           <button className="inline-flex items-center gap-2 bg-[#FF5A36] hover:bg-[#e04e2e] text-white px-6 py-3 rounded-full font-medium transition-colors">
@@ -532,7 +532,7 @@ function OtherProjectsPage() {
   return (
     <main className="pt-32 pb-24 px-4 max-w-7xl mx-auto min-h-screen">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Other Projects</h1>
+        <h1 className="text-[34px] md:text-5xl font-bold mb-4">Other Projects</h1>
         <p className="text-neutral-400 max-w-2xl mx-auto">A collection of explorations, side projects, and work that didn't make the front page but still holds value.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -602,7 +602,7 @@ function AboutPage() {
 
       {/* Text Content */}
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">About Me</h1>
+        <h1 className="text-[34px] md:text-5xl font-bold mb-8">About Me</h1>
         <div className="space-y-6 text-neutral-300 text-lg leading-relaxed">
           <p>
             Hi, I’m Sai — a UI/UX Designer and Frontend Developer who enjoys turning complex ideas into simple, meaningful digital experiences. I believe good design is not just about how it looks, but how it works and feels for the user.
