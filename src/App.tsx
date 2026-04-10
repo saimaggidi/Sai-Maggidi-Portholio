@@ -406,15 +406,15 @@ function SelectedProjects() {
       imageUrl: medquantsImg
     },
     {
-      title: "Devlats IoT - Centralized IoT Control",
-      description: "Scalable design system for ONDC that brings consistency to government E-commerce platforms.",
-      tags: ["Design System", "Module Work", "3 Weeks"],
+      title: "IoT Wi-Fi Networking Application",
+      description: "To enable businesses to manage Wi-Fi networks with secure guest access, browsing control, and role-based restrictions through intuitive admin and user portals.",
+      tags: ["IoT", "Network UX", "Security", "Mobile & Web"],
       imageUrl: iotImg
     },
     {
-      title: "ATS AI Recruitment Software",
-      description: "Designed green nudges AI interfaces that make the hidden carbon footprint visible to users.",
-      tags: ["Digital Ergonomics", "HFID Module", "3 Weeks"],
+      title: "ATS – Applicant Tracking System",
+      description: "To simplify recruitment processes with a responsive web platform featuring resume filtering, interview tracking, and role-based access for recruiters, hiring managers, and BDM.",
+      tags: ["HR Tech", "Dashboard UX", "Enterprise", "Web App"],
       imageUrl: atsImg
     }
   ];
