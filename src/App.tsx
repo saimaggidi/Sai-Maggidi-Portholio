@@ -2,8 +2,6 @@ import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkle
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
-import profileImg from './assets/profile.png';
-import inventoryImg from './inventorymanagementsystem.png';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -181,7 +179,7 @@ function Hero() {
       <div className="relative z-10 flex flex-col items-center">
         <div className="hover-3d-container mb-6">
           <div className="hover-3d-element w-32 h-32 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-xl cursor-pointer">
-             <img src={profileImg} alt="Sai" className="w-full h-full object-cover" />
+             <img src=".assets/profile.png" alt="Sai" className="w-full h-full object-cover" />
           </div>
         </div>
         
