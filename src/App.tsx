@@ -2,6 +2,8 @@ import { ArrowRight, Mail, Linkedin, Dribbble, Download, PenTool, Code2, Sparkle
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import profileImg from './assets/profile.png';
+import inventoryImg from './assets/inventorymanagementsystem.png';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -68,7 +70,7 @@ function Navbar() {
           <div className="flex items-center">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
-                <img src="/profile.png?v=2" alt="Logo" className="w-full h-full object-cover" />
+                <img src={profileImg} alt="Logo" className="w-full h-full object-cover" />
               </div>
             </Link>
           </div>
@@ -179,7 +181,7 @@ function Hero() {
       <div className="relative z-10 flex flex-col items-center">
         <div className="hover-3d-container mb-6">
           <div className="hover-3d-element w-32 h-32 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-xl cursor-pointer">
-             <img src=".assets/profile.png" alt="Sai" className="w-full h-full object-cover" />
+             <img src={profileImg} alt="Sai" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -378,7 +380,7 @@ function SelectedProjects() {
       title: "Inventory Management System",
       description: "To enhance business efficiency through a multi-role system with real-time dashboards for inventory, billing, and performance tracking.",
       tags: ["Dashboard", "Enterprise UX", "Data Visualization"],
-      imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+      imageUrl: inventoryImg
     },
     {
       title: " Soult App – Digital Locker",
@@ -555,7 +557,7 @@ function AboutPage() {
         <div className="relative scale-75 md:scale-100">
           {/* Avatar */}
           <div className="w-64 h-64 rounded-full bg-[#FF5A36] overflow-hidden border-4 border-[#0a0a0a] shadow-2xl relative z-10 flex items-center justify-center">
-            <img src="/profile.png?v=2" alt="Sai" className="w-full h-full object-cover" />
+            <img src={profileImg} alt="Sai" className="w-full h-full object-cover" />
           </div>
 
           {/* Tags */}
