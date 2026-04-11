@@ -249,11 +249,20 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   imageUrl: string;
+  index?: number;
 }
 
-function ProjectCard({ title, description, tags, imageUrl }: ProjectCardProps) {
+function ProjectCard({ title, description, tags, imageUrl, index = 0 }: ProjectCardProps) {
+  const isEven = index % 2 === 0;
+  
   return (
-    <div className="group cursor-pointer flex flex-col">
+    <motion.div 
+      initial={{ opacity: 0, x: isEven ? -60 : 60, scale: 0.8, rotateY: isEven ? -15 : 15, z: -100, transformPerspective: 1000 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0, z: 0, transformPerspective: 1000 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="group cursor-pointer flex flex-col"
+    >
       <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-neutral-900 border border-white/5">
         <img 
           src={imageUrl} 
@@ -262,9 +271,9 @@ function ProjectCard({ title, description, tags, imageUrl }: ProjectCardProps) {
         />
       </div>
       <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map((tag, index) => (
+        {tags.map((tag, tagIndex) => (
           <span 
-            key={index} 
+            key={tagIndex} 
             className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-neutral-300 border border-white/10"
           >
             {tag}
@@ -273,7 +282,7 @@ function ProjectCard({ title, description, tags, imageUrl }: ProjectCardProps) {
       </div>
       <h3 className="text-2xl font-semibold mb-2 text-white group-hover:text-[#FF5A36] transition-colors">{title}</h3>
       <p className="text-neutral-400 text-sm leading-relaxed">{description}</p>
-    </div>
+    </motion.div>
   );
 }
 
@@ -288,7 +297,11 @@ function Services() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Design Card */}
         <motion.div 
-          whileHover={{ y: -8 }}
+          initial={{ opacity: 0, x: -60, scale: 0.8, rotateY: -15, z: -100, transformPerspective: 1000 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0, z: 0, transformPerspective: 1000 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          whileHover={{ y: -8, scale: 1.02 }}
           className="relative p-8 md:p-10 rounded-[2rem] bg-[#141414] border border-white/5 overflow-hidden group"
         >
           {/* Animated Background Blob */}
@@ -330,7 +343,11 @@ function Services() {
 
         {/* Development Card */}
         <motion.div 
-          whileHover={{ y: -8 }}
+          initial={{ opacity: 0, x: 60, scale: 0.8, rotateY: 15, z: -100, transformPerspective: 1000 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0, z: 0, transformPerspective: 1000 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          whileHover={{ y: -8, scale: 1.02 }}
           className="relative p-8 md:p-10 rounded-[2rem] bg-[#141414] border border-white/5 overflow-hidden group"
         >
           {/* Animated Background Blob */}
@@ -428,7 +445,7 @@ function SelectedProjects() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} index={index} />
         ))}
       </div>
     </section>
@@ -540,11 +557,21 @@ function OtherProjectsPage() {
         <p className="text-neutral-400 max-w-2xl mx-auto">A collection of explorations, side projects, and work that didn't make the front page but still holds value.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {otherProjects.map((img, i) => (
-          <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 group cursor-pointer">
-            <img src={img} alt={`Project ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-        ))}
+        {otherProjects.map((img, i) => {
+          const isEven = i % 2 === 0;
+          return (
+            <motion.div 
+              key={i} 
+              initial={{ opacity: 0, x: isEven ? -40 : 40, scale: 0.8, rotateY: isEven ? -10 : 10, z: -50, transformPerspective: 1000 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1, rotateY: 0, z: 0, transformPerspective: 1000 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: (i % 3) * 0.1 }}
+              className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 group cursor-pointer"
+            >
+              <img src={img} alt={`Project ${i+1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </motion.div>
+          );
+        })}
       </div>
     </main>
   );
