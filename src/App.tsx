@@ -597,37 +597,37 @@ function AboutPage() {
 
           {/* Tags */}
           {/* Top Left */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-24 md:-left-56 flex items-center gap-3 z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Product Design</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Middle Left */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute top-1/2 -translate-y-1/2 -left-16 md:-left-64 flex items-center gap-3 z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute top-1/2 -translate-y-1/2 -left-32 md:-left-64 flex items-center gap-3 z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Research</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Bottom Left */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }} className="absolute bottom-10 -left-10 md:-left-56 flex items-center gap-3 z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }} className="absolute bottom-10 -left-24 md:-left-56 flex items-center gap-3 z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UX Design</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="8,6 16,12 8,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Top Right */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="absolute top-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} className="absolute top-10 -right-24 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">UI Systems</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 -rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Middle Right */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }} className="absolute top-1/2 -translate-y-1/2 -right-16 md:-right-64 flex items-center gap-3 flex-row-reverse z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }} className="absolute top-1/2 -translate-y-1/2 -right-32 md:-right-64 flex items-center gap-3 flex-row-reverse z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Frontend Dev</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
 
           {/* Bottom Right */}
-          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }} className="absolute bottom-10 -right-10 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
+          <motion.div animate={{ y: [-5, 5, -5] }} transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 2.5 }} className="absolute bottom-10 -right-24 md:-right-56 flex items-center gap-3 flex-row-reverse z-20">
             <div className="px-5 py-2 rounded-full border border-white/20 bg-[#0a0a0a]/80 backdrop-blur-sm text-sm whitespace-nowrap">Usability Testing</div>
             <svg width="24" height="24" viewBox="0 0 24 24" className="opacity-70 rotate-[15deg] hidden md:block"><polygon points="16,6 8,12 16,18" fill="none" stroke="white" strokeWidth="1.5" strokeLinejoin="round" /></svg>
           </motion.div>
