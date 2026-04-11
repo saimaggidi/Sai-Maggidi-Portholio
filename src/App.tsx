@@ -73,7 +73,10 @@ function Navbar() {
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <nav className="pointer-events-auto flex items-center justify-between p-2 pr-3 bg-[#141414]/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl gap-4 md:gap-12 w-full md:max-w-fit">
           <div className="flex items-center">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/" onClick={() => {
+              setIsMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
               <div className="w-10 h-10 rounded-full bg-[#FF5A36] flex items-center justify-center overflow-hidden cursor-pointer">
                 <img src={profileImg} alt="Logo" className="w-full h-full object-cover" />
               </div>
@@ -876,9 +879,20 @@ function ResumePage() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-[#FF5A36]/30 cursor-none">
+      <ScrollToTop />
       <CustomCursor />
       <Navbar />
       <Routes>
