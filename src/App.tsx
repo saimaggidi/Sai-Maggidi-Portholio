@@ -9,6 +9,10 @@ import soultImg from './assets/soult.png';
 import iotImg from './assets/iot.png';
 import atsImg from './assets/ats.png';
 import medquantsImg from './assets/medquants.png';
+import ifectImg from './assets/i-fect.png';
+import iotlandingImg from './assets/iotlanding.png';
+import newsImg from './assets/news.png';
+import xtremeImg from './assets/xtreme.png';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -457,12 +461,10 @@ function SelectedProjects() {
 
 function OtherProjects() {
   const otherProjects = [
-    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=400",
+    ifectImg,
+    iotlandingImg,
+    newsImg,
+    xtremeImg,
   ];
 
   const ProjectList = () => (
@@ -545,12 +547,10 @@ function Home() {
 
 function OtherProjectsPage() {
   const otherProjects = [
-    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
+    ifectImg,
+    iotlandingImg,
+    newsImg,
+    xtremeImg
   ];
 
   return (
