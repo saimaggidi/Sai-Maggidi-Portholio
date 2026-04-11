@@ -13,6 +13,7 @@ import ifectImg from './assets/i-fect.png';
 import iotlandingImg from './assets/iotlanding.png';
 import newsImg from './assets/news.png';
 import xtremeImg from './assets/xtreme.png';
+import resumePDF from './assets/saimaggidi-resume.pdf';
 
 function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -669,8 +670,7 @@ function ResumePage() {
       
       // Trigger dummy PDF download
       const element = document.createElement("a");
-      const file = new Blob(["This is a placeholder for the actual resume PDF. Replace this with a real PDF file in your public folder."], {type: 'application/pdf'});
-      element.href = URL.createObjectURL(file);
+      element.href = resumePDF;
       element.download = "Maggidi_Sai_Resume.pdf";
       document.body.appendChild(element);
       element.click();
