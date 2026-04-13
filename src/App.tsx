@@ -794,7 +794,7 @@ function ResumePage() {
           
           <div className="mb-8">
             <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4">
-              <h3 className="text-xl font-bold text-white">UI/UX Designer & Frontend Developer | Deviats pvt Ltd – Hyderabad</h3>
+              <h3 className="text-xl font-bold text-white">UI/UX Designer & Frontend Developer | Devlats pvt Ltd – Hyderabad</h3>
               <span className="text-neutral-400 font-medium shrink-0 mt-1 md:mt-0">Jan 2023 – Present</span>
             </div>
             <ul className="list-disc list-outside ml-5 space-y-2 leading-relaxed text-neutral-300 marker:text-neutral-500">
